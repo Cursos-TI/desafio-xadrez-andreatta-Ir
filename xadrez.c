@@ -18,8 +18,15 @@ void moverRainha(int casas) {
     moverRainha(casas - 1);
 }
 
+void moverRainhaCompleta(int casas) {
+    if (casas == 0) return;
+    printf("Esquerda\n");
+    printf("Cima\n"); // Inclui movimento diagonal
+    moverRainhaCompleta(casas - 1);
+}
+
 int main() {
-    int i, j;
+    int i;
 
     // Movimentação da Torre (5 casas para a direita) 
     printf("Movimento da Torre:\n");
@@ -29,9 +36,9 @@ int main() {
     printf("\nMovimento do Bispo:\n");
     moverBispo(5);
 
-    // Movimentação da Rainha (8 casas para a esquerda) 
+    // Movimentação da Rainha (8 casas para a esquerda e para cima) 
     printf("\nMovimento da Rainha:\n");
-    moverRainha(8);
+    moverRainhaCompleta(8);
 
     // Movimentação do Cavalo (2 casas para cima e 1 casa para a direita) 
     printf("\nMovimento do Cavalo:\n");
